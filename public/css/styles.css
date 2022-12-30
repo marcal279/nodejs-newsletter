@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;800&family=Lobster&display=swap');
+
+.lobster{
+    font-family: 'Lobster', sans-serif;
+}
+.kumbh-sans{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.weight800{
+    font-weight: 800;
+}
+
+.primaryColor{
+    color:#7639de;
+}
+.bgColor{
+    background-color: #f6f0fe;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+nav{
+    color: white;
+}
+.nav-link{
+    color: #7639de;
+}
+.nav-link:hover{
+    color: #5b56b9;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
+    color: #5b56b9;
+}
+.active{
+    font-weight: 600;
+}
+
+.standardButton{
+    font-family: 'Kumbh Sans';
+    background-color: #7639de; 
+    color: #f6f0fe; 
+    border-radius: 1.25rem; border: none; 
+    padding: 0.75rem 1.5rem; 
+}
+.standardButton:hover{
+    transition-duration: 0.3s;
+    cursor: pointer;
+    color: #7639de;
+    background-color: #f6f0fe;
+    border: #7639de 1px solid;
+}
+
+.navbar-brand{
+    font-size: 1.5rem;
+}
+.nav-item{
+    margin-right: 1.5rem;
+}
+.nav-link{
+    padding-left: 1rem;
+}
+a{
+    color: white;
+}
+.navbar-toggler{
+    border: none;
+}
