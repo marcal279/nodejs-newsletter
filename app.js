@@ -50,5 +50,11 @@ app.post('/', (req,resp)=>{
         resp.sendFile(__dirname+'/html/failure.html');
     });
 })
+app.post('/success', (req,resp)=>{
+    resp.redirect('/');
+})
+app.post('/failure', (req,resp)=>{
+    resp.redirect('/');
+})
 
 app.listen(PORT, ()=>{console.log(`Server running on Port ${PORT}`)} );
