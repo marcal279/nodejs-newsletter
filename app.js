@@ -38,6 +38,15 @@ app.get('/', (req,resp)=>{
     resp.sendFile(__dirname+'/html/index.html');
 })
 
+// ********************************
+app.get('/success', (req,resp)=>{
+    resp.sendFile(__dirname+'/html/success.html')
+})
+app.get('/failure', (req,resp)=>{
+    resp.sendFile(__dirname+'/html/failure.html')
+})
+// ********************************
+
 app.post('/', (req,resp)=>{
     const name = req.body.nameData;
     var fname = name.slice(0,name.indexOf(' ')), lname = name.slice(name.indexOf(' ')); 
