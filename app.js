@@ -31,19 +31,19 @@ async function mailchimpAddMember(fname, lname, emailArg){
 
 const app = express();
 
-app.use(express.static("/public"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req,resp)=>{
-    resp.sendFile(__dirname+'/index.html');
+    resp.sendFile(__dirname+'/html/index.html');
 })
 
 // ********************************
 app.get('/success', (req,resp)=>{
-    resp.sendFile(__dirname+'/success.html')
+    resp.sendFile(__dirname+'/html/success.html')
 })
 app.get('/failure', (req,resp)=>{
-    resp.sendFile(__dirname+'/failure.html')
+    resp.sendFile(__dirname+'/html/failure.html')
 })
 // ********************************
 
@@ -54,9 +54,9 @@ app.post('/', (req,resp)=>{
 
     mailchimpPing();
     mailchimpAddMember(fname, lname, email).then(()=>{
-        resp.sendFile(__dirname+'/success.html');
+        resp.sendFile(__dirname+'/html/success.html');
     }).catch(()=>{
-        resp.sendFile(__dirname+'/failure.html');
+        resp.sendFile(__dirname+'/html/failure.html');
     });
 })
 app.post('/success', (req,resp)=>{
