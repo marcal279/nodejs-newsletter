@@ -1,4 +1,4 @@
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -35,15 +35,15 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req,resp)=>{
-    resp.sendFile(__dirname+'/html/index.html');
+    resp.sendFile(__dirname+'/index.html');
 })
 
 // ********************************
 app.get('/success', (req,resp)=>{
-    resp.sendFile(__dirname+'/html/success.html')
+    resp.sendFile(__dirname+'/success.html')
 })
 app.get('/failure', (req,resp)=>{
-    resp.sendFile(__dirname+'/html/failure.html')
+    resp.sendFile(__dirname+'/failure.html')
 })
 // ********************************
 
@@ -54,9 +54,9 @@ app.post('/', (req,resp)=>{
 
     mailchimpPing();
     mailchimpAddMember(fname, lname, email).then(()=>{
-        resp.sendFile(__dirname+'/html/success.html');
+        resp.sendFile(__dirname+'/success.html');
     }).catch(()=>{
-        resp.sendFile(__dirname+'/html/failure.html');
+        resp.sendFile(__dirname+'/failure.html');
     });
 })
 app.post('/success', (req,resp)=>{
